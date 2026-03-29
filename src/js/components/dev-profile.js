@@ -8,7 +8,7 @@ class DevProfile extends LitElement {
       width: 100%;
     }
     .profile-card {
-      background: #ffffff; /* B&W */
+      background: #ffffff;
       border: 4px solid #000;
       box-shadow: 8px 8px 0px #000;
       border-radius: 0;
@@ -37,11 +37,12 @@ class DevProfile extends LitElement {
       margin: 0 0 0.5rem 0;
       text-transform: uppercase;
       letter-spacing: -1px;
+      font-size: clamp(1.25rem, 5vw, 1.75rem);
     }
     .subtitle {
       color: #000;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: clamp(0.9rem, 3vw, 1.2rem);
       margin: 0 0 1.5rem 0;
       background: #fff;
       display: inline-block;
@@ -53,6 +54,7 @@ class DevProfile extends LitElement {
       align-items: center;
       justify-content: center;
       gap: 1.5rem;
+      flex-wrap: wrap;
     }
     .social-links a {
       background: #ffffff;
@@ -89,6 +91,42 @@ class DevProfile extends LitElement {
       font-weight: 600;
       line-height: 1.6;
       margin: 0;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 576px) {
+      .profile-card {
+        padding: 1.5rem 1rem;
+        border-width: 3px;
+        box-shadow: 4px 4px 0px #000;
+      }
+      .profile-card:hover {
+        transform: none;
+        box-shadow: 4px 4px 0px #000;
+      }
+      .profile-img {
+        width: 110px;
+        height: 110px;
+        border-width: 3px;
+        box-shadow: 3px 3px 0px #000;
+      }
+      .social-links {
+        gap: 0.75rem;
+      }
+      .social-links a {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.85rem;
+        border-width: 2px;
+        box-shadow: 3px 3px 0px #000;
+      }
+      .about-section {
+        padding: 1rem;
+        border-width: 3px;
+        box-shadow: 3px 3px 0px #000;
+      }
+      .about-section p {
+        font-size: 0.9rem;
+      }
     }
   `;
 

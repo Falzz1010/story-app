@@ -35,9 +35,9 @@ class StoryCard extends LitElement {
           <h5 class="card-title">${msg(str`Cerita dari ${this.name}`)}</h5>
           <p class="card-text flex-grow-1 mt-2">${this.description}</p>
         </div>
-        <div class="card-footer d-flex justify-content-between align-items-center">
+        <div class="card-footer d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
           <small><i class="bi bi-clock me-1"></i>${this._formatDate(this.createdAt)}</small>
-          <button class="btn btn-sm btn-outline-primary rounded-pill px-3">${msg('Baca Selengkapnya')}</button>
+          <button class="btn btn-sm btn-outline-dark px-3" style="border-width:2px;font-weight:700;">${msg('Baca Selengkapnya')}</button>
         </div>
       </div>
     `;

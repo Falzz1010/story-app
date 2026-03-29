@@ -7,10 +7,16 @@
   box-shadow: v.$shadow-md;
   padding: 1rem 0;
 
+  @media (max-width: 576px) {
+    padding: 0.75rem 0;
+    box-shadow: v.$shadow-sm;
+  }
+
   .navbar-brand {
     font-weight: 900;
     font-family: v.$font-family-heading;
     color: #000 !important;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
   }
 
   .nav-link {

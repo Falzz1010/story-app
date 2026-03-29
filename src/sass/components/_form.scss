@@ -6,11 +6,21 @@
   border-radius: 0;
   padding: 2.5rem;
   
+  @media (max-width: 576px) {
+    padding: 1.5rem;
+    border-width: 2px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  }
+
   .form-label {
     font-weight: 800;
     font-family: v.$font-family-heading;
     color: v.$text-main;
     font-size: 1.1rem;
+
+    @media (max-width: 576px) {
+      font-size: 1rem;
+    }
   }
 
   .form-control {
@@ -19,6 +29,11 @@
     padding: 0.75rem 1rem;
     transition: all 0.2s;
     font-weight: 600;
+
+    @media (max-width: 576px) {
+      border-width: 2px;
+      padding: 0.6rem 0.75rem;
+    }
 
     &:focus {
       border-color: #000;
@@ -36,6 +51,13 @@
     border-radius: 0;
     box-shadow: v.$shadow-md;
     transition: all 0.2s;
+
+    @media (max-width: 576px) {
+      font-size: 1rem;
+      padding: 0.85rem 1.5rem;
+      border-width: 2px;
+      box-shadow: v.$shadow-sm;
+    }
 
     &:hover {
       background-color: #000000;

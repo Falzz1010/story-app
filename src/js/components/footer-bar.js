@@ -10,7 +10,7 @@ class FooterBar extends LitElement {
     footer {
       background-color: #ffffff;
       border-top: 4px solid #000;
-      padding: 2rem 0;
+      padding: 2rem 1rem;
       text-align: center;
       font-family: 'Space Grotesk', sans-serif;
       box-shadow: inset 0 4px 0px rgba(0,0,0,0.1);
@@ -36,6 +36,24 @@ class FooterBar extends LitElement {
       margin-top: 1rem;
       font-size: 0.9rem;
       font-weight: 700;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 576px) {
+      footer {
+        padding: 1.25rem 0.75rem;
+        border-top-width: 3px;
+      }
+      p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      small {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.4rem;
+        border-width: 2px;
+        box-shadow: 2px 2px 0 #000;
+      }
     }
   `;
 

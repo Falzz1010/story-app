@@ -6,7 +6,6 @@
 @use 'components/alert';
 
 body {
-  // Let Bootstrap variables handle the core body colors now
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,4 +13,9 @@ body {
 
 main {
   flex: 1;
+}
+
+// Global responsive typography
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
