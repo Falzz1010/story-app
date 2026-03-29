@@ -1,0 +1,20 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+// 5th Component Customization: Alert
+.alert-custom {
+  background-color: #ffffff;
+  border: 3px solid #000;
+  border-radius: 0;
+  box-shadow: v.$shadow-md;
+  padding: 1.5rem;
+  font-weight: 800;
+  font-family: v.$font-family-heading;
+  color: #000;
+
+  &.alert-danger {
+    background-color: #000000; // Black for B&W look
+    color: #fff;
+    text-shadow: 2px 2px 0px #444;
+  }
+}

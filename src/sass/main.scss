@@ -1,0 +1,17 @@
+@use 'vendors/bootstrap';
+@use 'components/navbar';
+@use 'components/story-card';
+@use 'components/form';
+@use 'components/spinner';
+@use 'components/alert';
+
+body {
+  // Let Bootstrap variables handle the core body colors now
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}

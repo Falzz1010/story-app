@@ -1,0 +1,13 @@
+@use '../utils/variables' as v;
+
+// 4th Component Customization: Spinner
+.spinner-custom {
+  width: 4rem;
+  height: 4rem;
+  border-width: 0.5rem; // Thick spinning border
+  color: v.$primary-color;
+  animation-duration: 0.8s;
+  border-right-color: transparent;
+  border-radius: 50%;
+  box-shadow: v.$shadow-sm; // weird spinner shadow for fun
+}

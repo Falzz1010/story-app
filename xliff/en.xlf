@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="en" source-language="id" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s35f27e363b2b570f">
+  <source>Penggiat Frontend Engineering</source>
+  <target>Frontend Engineering Enthusiast</target>
+</trans-unit>
+<trans-unit id="s0d7ffd6b0c653940">
+  <source>Tentang</source>
+  <target>About</target>
+</trans-unit>
+<trans-unit id="sb59603c188efced1">
+  <source>Web developer yang antusias dalam membuat aplikasi web modern, responsif, dan dinamis. Proyek Story App ini fokus pada enkapuslasi Web Components (Lit) via Shadow DOM asli.</source>
+  <target>Passionate web developer creating modern, responsive, and dynamic web applications. This Story App project focuses on Web Components (Lit) via native Shadow DOM encapsulation.</target>
+</trans-unit>
+<trans-unit id="s2b1152796101df65">
+  <source>Dibuat dengan</source>
+  <target>Built with</target>
+</trans-unit>
+<trans-unit id="sfcab022b8fe4dfa2">
+  <source>menggunakan Lit &amp; Bootstrap.</source>
+  <target>using Lit &amp; Bootstrap.</target>
+</trans-unit>
+<trans-unit id="s7ea455e171ef81e6">
+  <source>Submission untuk Dicoding Front-End Web Developer</source>
+  <target>Submission for Dicoding Front-End Web Developer</target>
+</trans-unit>
+<trans-unit id="s6d8c02aee480af7a">
+  <source>Menu</source>
+  <target>Menu</target>
+</trans-unit>
+<trans-unit id="s7fee95b66225e1fb">
+  <source>Dashboard</source>
+  <target>Dashboard</target>
+</trans-unit>
+<trans-unit id="sfae357d460dcc835">
+  <source>Tambah Story</source>
+  <target>Add Story</target>
+</trans-unit>
+<trans-unit id="s2978cbae488f9ae5">
+  <source>Profil Developer</source>
+  <target>Developer Profile</target>
+</trans-unit>
+<trans-unit id="s5fae657c633254f7">
+  <source>Bahasa</source>
+  <target>Language</target>
+</trans-unit>
+<trans-unit id="s168df2a066339989">
+  <source>Story by <x id="0" equiv-text="${this.name}"/></source>
+  <target>Story by <x id="0" equiv-text="${this.name}"/></target>
+</trans-unit>
+<trans-unit id="sf3587a5777b1c15d">
+  <source>Cerita dari <x id="0" equiv-text="${this.name}"/></source>
+  <target>Story from <x id="0" equiv-text="${this.name}"/></target>
+</trans-unit>
+<trans-unit id="s58c5fcb9616de710">
+  <source>Baca Selengkapnya</source>
+  <target>Read More</target>
+</trans-unit>
+<trans-unit id="s7351aafb413a5869">
+  <source>Unggah Foto</source>
+  <target>Upload Photo</target>
+</trans-unit>
+<trans-unit id="sd833503973fa3cdd">
+  <source>Silakan pilih file gambar yang valid.</source>
+  <target>Please choose a valid image file.</target>
+</trans-unit>
+<trans-unit id="s46fb51676560ec2b">
+  <source>Pratinjau</source>
+  <target>Preview</target>
+</trans-unit>
+<trans-unit id="s275493943d7dbbbf">
+  <source>Pratinjau Cerita</source>
+  <target>Story Preview</target>
+</trans-unit>
+<trans-unit id="s4195c66c819acc53">
+  <source>Deskripsi Cerita</source>
+  <target>Story Description</target>
+</trans-unit>
+<trans-unit id="sa76f0dea1b73c1ed">
+  <source>Ceritakan apa yang ada di pikiran Anda...</source>
+  <target>Tell us what's on your mind...</target>
+</trans-unit>
+<trans-unit id="s252e1e348719268a">
+  <source>Silakan masukkan deskripsi untuk cerita Anda.</source>
+  <target>Please enter a description for your story.</target>
+</trans-unit>
+<trans-unit id="s37be4013b2b71b4b">
+  <source>Publikasikan Cerita</source>
+  <target>Publish Story</target>
+</trans-unit>
+</body>
+</file>
+</xliff>

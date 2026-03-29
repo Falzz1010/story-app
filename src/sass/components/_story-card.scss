@@ -1,0 +1,45 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.story-card-custom {
+  @include m.card-glass; /* Using the neobrutalist override from mixins now */
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  
+  &:hover {
+    @include m.hover-lift;
+  }
+
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid #000;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+
+    .card-title {
+      font-weight: 900;
+      font-family: v.$font-family-heading;
+      color: v.$text-main;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      color: v.$text-main;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+  }
+
+  .card-footer {
+    background: #ffffff;
+    border-top: 3px solid #000;
+    padding: 1rem 1.5rem;
+    font-size: 0.875rem;
+    color: #000;
+    font-weight: 700;
+  }
+}

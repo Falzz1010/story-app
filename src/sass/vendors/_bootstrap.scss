@@ -1,0 +1,45 @@
+@use '../utils/variables' as v;
+
+// Override Bootstrap variables (if desired)
+$primary: v.$primary-color;
+$secondary: v.$secondary-color;
+$font-family-sans-serif: v.$font-family-base;
+$body-bg: v.$background-light;
+$body-color: v.$text-main;
+
+// 1. Button Customization
+$btn-border-radius: 0px;
+$btn-border-width: 3px;
+$btn-border-color: #000;
+$btn-padding-y: 0.75rem;
+$btn-box-shadow: v.$shadow-sm;
+$btn-focus-box-shadow: v.$shadow-md;
+
+// 2. Card Customization
+$card-border-radius: 0px;
+$card-bg: v.$card-bg;
+$card-border-width: 3px;
+$card-border-color: #000;
+$card-box-shadow: v.$shadow-md;
+
+// 3. Navbar Customization
+$navbar-padding-y: 1.25rem;
+$navbar-light-brand-color: v.$primary-color;
+$navbar-light-color: v.$text-main;
+
+// 4. Form / Input Customization
+$input-border-radius: 0px;
+$input-bg: v.$card-bg;
+$input-border-color: #000;
+$input-border-width: 3px;
+$input-focus-border-color: #000;
+$input-focus-box-shadow: v.$shadow-sm;
+
+// 5. Offcanvas Customization
+$offcanvas-bg-color: v.$background-light;
+$offcanvas-box-shadow: -4px 0px 0px #000;
+$offcanvas-title-line-height: 1.5;
+
+// Import Bootstrap core
+// Bootstrap still uses @import internally, which is allowed by Dicoding criteria for third party libs
+@import '~bootstrap/scss/bootstrap';
