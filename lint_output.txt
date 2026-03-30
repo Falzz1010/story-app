@@ -1,0 +1,17 @@
+
+> story-app@1.0.0 lint
+> eslint src/js/
+
+
+C:\Users\setia\Downloads\story-app-starter-project\story-app\src\js\components\loading-indicator.js
+  2:10  warning  'msg' is defined but never used  no-unused-vars
+
+C:\Users\setia\Downloads\story-app-starter-project\story-app\src\js\components\nav-bar.js
+   2:15  warning  'str' is defined but never used            no-unused-vars
+  18:11  warning  'user' is assigned a value but never used  no-unused-vars
+
+C:\Users\setia\Downloads\story-app-starter-project\story-app\src\js\index.js
+  5:13  warning  'bootstrap' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+

@@ -2,21 +2,38 @@
 import '../sass/main.scss';
 
 // Import bootstrap javascript logic (for offcanvas, etc)
-import * as bootstrap from 'bootstrap';
+import 'bootstrap';
 
 // Import web components
 import './components/index.js';
 
+// Import API and auth utilities
+import { getAllStories } from './data/api.js';
+import { requireAuth, isLoggedIn } from './utils/auth.js';
+
 const init = async () => {
   const path = window.location.pathname;
-  
+
   // Highlight active nav link
   const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === path || (path === '/' && link.getAttribute('href') === '/index.html')) {
+  navLinks.forEach((link) => {
+    if (
+      link.getAttribute('href') === path ||
+      (path === '/' && link.getAttribute('href') === '/index.html')
+    ) {
       link.classList.add('active');
     }
   });
+
+  // Pages that do NOT require authentication
+  const publicPages = ['/login.html', '/register.html'];
+  const isPublicPage = publicPages.some((p) => path === p || path.endsWith(p));
+
+  // Redirect to login if not authenticated and not on a public page
+  if (!isPublicPage && !isLoggedIn()) {
+    requireAuth();
+    return;
+  }
 
   // Render Dashboard
   if (path === '/' || path.includes('index.html')) {
@@ -39,36 +56,45 @@ const init = async () => {
 
 const renderDashboard = async () => {
   const container = document.getElementById('story-container');
-  if (!container) return;
+  if (!container) {return;}
+
+  // Show loading indicator
+  container.innerHTML = `
+    <div class="col-12 text-center py-5">
+      <loading-indicator size="lg" message="Memuat cerita..."></loading-indicator>
+    </div>
+  `;
 
   try {
-    const response = await fetch('./data/DATA.json');
-    if (!response.ok) throw new Error('Network response was not ok');
-    
-    const responseJson = await response.json();
-    const stories = responseJson.listStory;
-    
+    const response = await getAllStories();
+    const stories = response.listStory;
+
     // Clear the loading indicator
     container.innerHTML = '';
 
-    stories.forEach(story => {
+    if (!stories || stories.length === 0) {
+      container.innerHTML =
+        '<div class="col-12"><div class="alert alert-custom">Belum ada cerita. Jadilah yang pertama berbagi!</div></div>';
+      return;
+    }
+
+    stories.forEach((story) => {
       const col = document.createElement('div');
       col.className = 'col-12 col-md-6 col-lg-4 mb-4';
-      
+
       const storyCard = document.createElement('story-card');
       storyCard.setAttribute('storyId', story.id);
       storyCard.setAttribute('name', story.name);
       storyCard.setAttribute('description', story.description);
       storyCard.setAttribute('photoUrl', story.photoUrl);
       storyCard.setAttribute('createdAt', story.createdAt);
-      
+
       col.appendChild(storyCard);
       container.appendChild(col);
     });
-
   } catch (error) {
     console.error('Error fetching stories:', error);
-    container.innerHTML = '<div class="col-12"><div class="alert alert-danger alert-custom">Failed to load stories. Please try again later.</div></div>';
+    container.innerHTML = `<div class="col-12"><div class="alert alert-danger alert-custom"><i class="bi bi-exclamation-triangle-fill me-2"></i>${error.message || 'Failed to load stories. Please try again later.'}</div></div>`;
   }
 };
 

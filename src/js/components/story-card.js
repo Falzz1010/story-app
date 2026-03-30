@@ -7,7 +7,7 @@ class StoryCard extends LitElement {
     name: { type: String },
     description: { type: String },
     photoUrl: { type: String },
-    createdAt: { type: String }
+    createdAt: { type: String },
   };
 
   createRenderRoot() {
@@ -15,29 +15,41 @@ class StoryCard extends LitElement {
   }
 
   _formatDate(dateString) {
-    if (!dateString) return '';
+    if (!dateString) {return '';}
     const date = new Date(dateString);
     return new Intl.DateTimeFormat('id-ID', {
       weekday: 'long',
       day: 'numeric',
       month: 'long',
-      year: 'numeric'
+      year: 'numeric',
     }).format(date);
   }
 
   render() {
     return html`
       <div class="card h-100 story-card-custom">
-        ${this.photoUrl 
-          ? html`<img src="${this.photoUrl}" class="card-img-top" alt="${msg(str`Story by ${this.name}`)}" loading="lazy">` 
+        ${this.photoUrl
+          ? html`<img
+              src="${this.photoUrl}"
+              class="card-img-top"
+              alt="${msg(str`Story by ${this.name}`)}"
+              loading="lazy"
+            />`
           : nothing}
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">${msg(str`Cerita dari ${this.name}`)}</h5>
           <p class="card-text flex-grow-1 mt-2">${this.description}</p>
         </div>
-        <div class="card-footer d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+        <div
+          class="card-footer d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2"
+        >
           <small><i class="bi bi-clock me-1"></i>${this._formatDate(this.createdAt)}</small>
-          <button class="btn btn-sm btn-outline-dark px-3" style="border-width:2px;font-weight:700;">${msg('Baca Selengkapnya')}</button>
+          <button
+            class="btn btn-sm btn-outline-dark px-3"
+            style="border-width:2px;font-weight:700;"
+          >
+            ${msg('Baca Selengkapnya')}
+          </button>
         </div>
       </div>
     `;

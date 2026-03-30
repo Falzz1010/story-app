@@ -29,4 +29,18 @@
       text-shadow: 2px 2px 0px #000;
     }
   }
+
+  .logout-link {
+    border: 3px solid #000;
+    box-shadow: v.$shadow-sm;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #000;
+      color: #fff !important;
+      text-shadow: none;
+      transform: translate(-2px, -2px);
+      box-shadow: v.$shadow-md;
+    }
+  }
 }

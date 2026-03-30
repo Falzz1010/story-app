@@ -1,18 +1,26 @@
 import { html, LitElement } from 'lit';
-import { msg, str } from '@lit/localize';
+import { msg } from '@lit/localize';
 import { setLocale, getLocale } from '../localization.js';
+import { isLoggedIn, logout } from '../utils/auth.js';
 
 class NavBar extends LitElement {
   createRenderRoot() {
-    return this; 
+    return this;
+  }
+
+  _handleLogout(e) {
+    e.preventDefault();
+    logout();
   }
 
   render() {
+    const loggedIn = isLoggedIn();
+
     return html`
       <nav class="navbar navbar-expand-lg navbar-light sticky-top app-navbar-custom">
         <div class="container">
           <a class="navbar-brand fs-3" href="/">StoryApp</a>
-          
+
           <button
             class="navbar-toggler border-0"
             type="button"
@@ -38,28 +46,67 @@ class NavBar extends LitElement {
                 aria-label="Close"
               ></button>
             </div>
-            
+
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link px-3" href="/">${msg('Dashboard')}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link px-3" href="/add-story.html">${msg('Tambah Story')}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link px-3" href="/profile.html">${msg('Profil Developer')}</a>
-                </li>
+                ${loggedIn
+                  ? html`
+                      <li class="nav-item">
+                        <a class="nav-link px-3" href="/">${msg('Dashboard')}</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link px-3" href="/add-story.html">${msg('Tambah Story')}</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link px-3" href="/profile.html">${msg('Profil Developer')}</a>
+                      </li>
+                    `
+                  : html`
+                      <li class="nav-item">
+                        <a class="nav-link px-3" href="/login.html">${msg('Masuk')}</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link px-3" href="/register.html">${msg('Daftar')}</a>
+                      </li>
+                    `}
                 <li class="nav-item dropdown px-3">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     ${msg('Bahasa')} (${getLocale()})
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#" @click=${() => this._localeChanged('id')}>Indonesia (ID)</a></li>
-                    <li><a class="dropdown-item" href="#" @click=${() => this._localeChanged('en')}>English (EN)</a></li>
-                    <li><a class="dropdown-item" href="#" @click=${() => this._localeChanged('es')}>Español (ES)</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#" @click=${() => this._localeChanged('id')}
+                        >Indonesia (ID)</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#" @click=${() => this._localeChanged('en')}
+                        >English (EN)</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#" @click=${() => this._localeChanged('es')}
+                        >Español (ES)</a
+                      >
+                    </li>
                   </ul>
                 </li>
+                ${loggedIn
+                  ? html`
+                      <li class="nav-item px-3 d-flex align-items-center">
+                        <a class="nav-link px-3 logout-link" href="#" @click=${this._handleLogout}>
+                          <i class="bi bi-box-arrow-right me-1"></i>${msg('Keluar')}
+                        </a>
+                      </li>
+                    `
+                  : ''}
               </ul>
             </div>
           </div>
@@ -67,7 +114,7 @@ class NavBar extends LitElement {
       </nav>
     `;
   }
-  
+
   async _localeChanged(newLocale) {
     if (newLocale !== getLocale()) {
       try {

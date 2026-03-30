@@ -13,7 +13,7 @@ class FooterBar extends LitElement {
       padding: 2rem 1rem;
       text-align: center;
       font-family: 'Space Grotesk', sans-serif;
-      box-shadow: inset 0 4px 0px rgba(0,0,0,0.1);
+      box-shadow: inset 0 4px 0px rgba(0, 0, 0, 0.1);
     }
     p {
       color: #000;
@@ -62,7 +62,8 @@ class FooterBar extends LitElement {
       <footer>
         <div>
           <p>
-            &copy; ${new Date().getFullYear()} StoryApp. ${msg('Dibuat dengan')} <span class="heart">❤</span> ${msg('menggunakan Lit & Bootstrap.')}
+            &copy; ${new Date().getFullYear()} StoryApp. ${msg('Dibuat dengan')}
+            <span class="heart">❤</span> ${msg('menggunakan Lit & Bootstrap.')}
           </p>
           <small>${msg('Submission untuk Dicoding Front-End Web Developer')}</small>
         </div>

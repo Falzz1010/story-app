@@ -15,7 +15,9 @@ class DevProfile extends LitElement {
       text-align: center;
       padding: 3rem 2rem;
       font-family: 'Space Grotesk', sans-serif;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
     }
     .profile-card:hover {
       transform: translate(-4px, -4px);
@@ -133,11 +135,11 @@ class DevProfile extends LitElement {
   render() {
     return html`
       <div class="profile-card">
-        <img 
-          src="https://source.unsplash.com/random/300x300?portrait,developer" 
+        <img
+          src="https://source.unsplash.com/random/300x300?portrait,developer"
           alt="Developer Profile"
           class="profile-img"
-        >
+        />
         <h2>Dicoding Developer</h2>
         <p class="subtitle">${msg('Penggiat Frontend Engineering')}</p>
         <div class="social-links">
@@ -148,7 +150,9 @@ class DevProfile extends LitElement {
         <div class="about-section">
           <h5>${msg('Tentang')}</h5>
           <p>
-            ${msg('Web developer yang antusias dalam membuat aplikasi web modern, responsif, dan dinamis. Proyek Story App ini fokus pada enkapuslasi Web Components (Lit) via Shadow DOM asli.')}
+            ${msg(
+              'Web developer yang antusias dalam membuat aplikasi web modern, responsif, dan dinamis. Proyek Story App ini fokus pada enkapuslasi Web Components (Lit) via Shadow DOM asli.',
+            )}
           </p>
         </div>
       </div>

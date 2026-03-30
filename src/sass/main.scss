@@ -4,6 +4,7 @@
 @use 'components/form';
 @use 'components/spinner';
 @use 'components/alert';
+@use 'components/auth';
 
 body {
   min-height: 100vh;

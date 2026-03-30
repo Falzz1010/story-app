@@ -1,0 +1,105 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+// Auth card container
+.auth-card {
+  @include m.card-glass;
+  border-radius: 0;
+  padding: 2.5rem;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem;
+    border-width: 2px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  }
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-title {
+  font-family: v.$font-family-heading;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: v.$text-main;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  font-weight: 600;
+  color: v.$text-muted;
+  font-size: clamp(0.9rem, 3vw, 1.05rem);
+  margin: 0;
+}
+
+.auth-link {
+  color: v.$text-main;
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: 3px solid #000;
+  padding-bottom: 2px;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    padding: 2px 6px;
+  }
+}
+
+// Input group text styling consistency
+.story-form-custom .input-group-text {
+  border: 3px solid #000;
+  border-radius: 0;
+  background: #fff;
+  font-weight: 800;
+  border-right: none;
+
+  @media (max-width: 576px) {
+    border-width: 2px;
+  }
+}
+
+.story-form-custom .input-group .form-control {
+  border-left: none;
+}
+
+// Success alert override
+.alert-custom.alert-success {
+  background-color: #000000;
+  color: #fff;
+  border: 3px solid #000;
+  text-shadow: 2px 2px 0px #444;
+}
+
+// Password toggle button
+.password-toggle {
+  border: 3px solid #000;
+  border-left: none;
+  border-radius: 0;
+  background: #fff;
+  font-weight: 800;
+  padding: 0.5rem 0.85rem;
+  transition: all 0.2s;
+  z-index: 4;
+
+  &:hover, &:focus {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+  }
+
+  @media (max-width: 576px) {
+    border-width: 2px;
+  }
+}
+
+// When password toggle is present, remove right border on input
+.story-form-custom .input-group .form-control:has(+ .password-toggle) {
+  border-right: none;
+}
+
